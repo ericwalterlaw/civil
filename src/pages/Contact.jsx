@@ -43,7 +43,7 @@ const Contact = () => {
         </svg>
       ),
       title: 'Phone',
-      details: ['Main: : (786) 601 3147', 'Other: (223) 223 4291'],
+      details: ['Main: : (223) 223 4291', 'Other: (786) 601 3147'], 
     },
     {
       icon: (
