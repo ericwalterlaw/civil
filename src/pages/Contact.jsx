@@ -43,7 +43,7 @@ const Contact = () => {
         </svg>
       ),
       title: 'Phone',
-      details: ['Main: : (223) 223 4291', 'Other: (786) 601 3147'], 
+      details: ['Main: : (213) 331 5414', 'Other: (480) 803 9359'], 
     },
     {
       icon: (
@@ -272,7 +272,7 @@ const Contact = () => {
             href="tel:555-123-4567"
             className="bg-white text-[#F97316] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition inline-block"
           >
-            Call Now: (555) 123-4567
+            Call Now: +1 (480) 803 9359
           </a>
         </div>
       </section>
