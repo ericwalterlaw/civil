@@ -1,62 +1,39 @@
-import React from 'react'
+import React from "react";
+import PremiumHero from "../components/PremiumHero";
+import { Home, Building2, Hammer, Ruler } from "lucide-react";
 
-const Home = () => {
+const Homepage = () => {
   const services = [
     {
-      icon: '🏠',
-      title: 'Residential Construction',
-      description: 'Custom homes built to your exact specifications with quality craftsmanship.'
+      icon: <Home strokeWidth={1} size={40} />,
+      title: "Private Residences",
+      description:
+        "Bespoke architectural homes tailored to refined lifestyles.",
     },
     {
-      icon: '🏢',
-      title: 'Commercial Projects',
-      description: 'Office buildings, retail spaces, and commercial developments.'
+      icon: <Building2 strokeWidth={1} size={40} />,
+      title: "Commercial Icons",
+      description:
+        "Structural landmarks designed for performance and prestige.",
     },
     {
-      icon: '🔨',
-      title: 'Renovations',
-      description: 'Transform your existing space with our expert renovation services.'
+      icon: <Hammer strokeWidth={1} size={40} />,
+      title: "Restorations",
+      description: "Elevating existing structures with modern luxury finishes.",
     },
-  ]
+  ];
 
   const stats = [
-    { number: '500+', label: 'Projects Completed' },
-    { number: '20+', label: 'Years Experience' },
-    { number: '100+', label: 'Happy Clients' },
-    { number: '50+', label: 'Team Members' },
-  ]
+    { number: "500+", label: "Projects Completed" },
+    { number: "20+", label: "Years Experience" },
+    { number: "100+", label: "Happy Clients" },
+    { number: "50+", label: "Team Members" },
+  ];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-500 text-white py-20">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Building Your Dreams Into Reality
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Professional construction services with over 20 years of experience. 
-              Quality, reliability, and excellence in every project.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/contact" 
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Get Free Quote
-              </a>
-              <a 
-                href="/services" 
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
-                Our Services
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PremiumHero />
 
       {/* Services Overview */}
       <section className="py-16 bg-gray-50">
@@ -66,20 +43,25 @@ const Home = () => {
               Our Core Services
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From concept to completion, we deliver exceptional construction solutions
+              From concept to completion, we deliver exceptional construction
+              solutions
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div 
+              <div
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl duration-200 text-center group hover:-translate-y-2 transform transition-transform"
+                className="group p-12 border-l border-gray-100 hover:bg-white hover:shadow-2xl transition-all duration-500"
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">
+                <div className="text-brand-gold mb-8 group-hover:scale-110 transition-transform duration-500">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-2xl mb-4 text-brand-dark tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-brand-muted leading-relaxed font-light">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
@@ -87,15 +69,18 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      {/* Stats Section */}
+      <section className="py-24 bg-brand-light border-y border-brand-dark/5">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
             {stats.map((stat, index) => (
-              <div key={index} className="group">
-                <div className="text-4xl md:text-5xl font-bold text-orange-500 mb-2 group-hover:scale-110 transition-transform duration-200">
+              <div key={index} className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-serif text-brand-dark mb-4">
                   {stat.number}
                 </div>
-                <div className="text-lg font-medium">{stat.label}</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-brand-gold font-bold">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -103,54 +88,54 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Why Choose NH Constructions?
+      <section className="py-32 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="relative">
+              <span className="text-brand-gold uppercase tracking-superwide text-xs font-bold mb-4 block">
+                The UE Standard
+              </span>
+              <h2 className="text-4xl md:text-5xl font-serif text-brand-dark mb-10 leading-tight">
+                Excellence in every <br />{" "}
+                <span className="italic font-light">detail.</span>
               </h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+
+              <div className="space-y-12">
+                {[
+                  {
+                    title: "Bespoke Engineering",
+                    desc: "Every structural element is calculated for longevity and aesthetic integration.",
+                  },
+                  {
+                    title: "Artisan Quality",
+                    desc: "We source materials from the world's finest quarries and timber mills.",
+                  },
+                  {
+                    title: "Legacy Timeline",
+                    desc: "Rigorous project management ensuring your vision is realized on schedule.",
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6">
+                    <div className="w-12 h-[1px] bg-brand-gold mt-4 shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-serif text-brand-dark mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-brand-muted leading-relaxed font-light">
+                        {item.desc}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Licensed & Insured</h3>
-                    <p className="text-gray-600">Fully licensed contractors with comprehensive insurance coverage</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Quality Guarantee</h3>
-                    <p className="text-gray-600">We stand behind our work with comprehensive warranties</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">On-Time Delivery</h3>
-                    <p className="text-gray-600">We respect your time and always deliver projects on schedule</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
-            <div className="bg-gray-100 rounded-lg p-8">
-              <img 
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Construction team at work" 
-                className="w-full h-64 object-cover rounded-lg shadow-lg"
+
+            <div className="relative group">
+              <div className="absolute -inset-4 border border-brand-gold/20 translate-x-8 translate-y-8 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700" />
+              <img
+                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Precision Construction"
+                className="relative w-full h-[600px] object-cover  hover:grayscale-0 transition-all duration-1000"
               />
             </div>
           </div>
@@ -158,24 +143,38 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-orange-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Start Your Project?
+      <section className="py-32 bg-brand-dark relative overflow-hidden">
+        {/* Subtle Texture Overlay */}
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')]" />
+
+        <div className="max-w-5xl mx-auto px-8 text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-serif text-white mb-8 leading-tight">
+            Ready to build{" "}
+            <span className="italic text-brand-gold">your legacy?</span>
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Get in touch with our expert team today for a free consultation and quote
+          <p className="text-brand-muted text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            Whether a private residence or a commercial landmark, we bring over
+            two decades of architectural excellence to your project.
           </p>
-          <a 
-            href="/contact" 
-            className="bg-white text-orange-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
-          >
-            Contact Us Today
-          </a>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a
+              href="/contact"
+              className="px-12 py-5 bg-brand-gold text-brand-dark font-bold uppercase tracking-widest hover:bg-white transition-all duration-500"
+            >
+              Free Consultation
+            </a>
+            <a
+              href="/portfolio"
+              className="text-white border-b border-white/20 pb-2 hover:border-brand-gold hover:text-brand-gold transition-all uppercase tracking-[0.2em] text-xs font-bold"
+            >
+              View Our Projects
+            </a>
+          </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Homepage;

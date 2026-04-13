@@ -1,2 +1,47 @@
 @import "tailwindcss";
 
+@theme {
+    --color-brand-dark: #0f172a;
+    --color-brand-gold: #c5a059;
+    --color-brand-muted: #64748b;
+    --color-brand-light: #f8fafc;
+
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+    body {
+        background-color: var(--color-brand-light);
+        color: var(--color-brand-dark);
+        font-family: var(--font-sans);
+    }
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-serif);
+    }
+}
+
+/* Subtle reveal animation for sections */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Luxury hover effect for images */
+.img-hover-zoom {
+    overflow: hidden;
+}
+.img-hover-zoom img {
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.img-hover-zoom:hover img {
+    transform: scale(1.08);
+}

@@ -1,283 +1,248 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    projectType: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert("Thank you for your message! We'll get back to you within 24 hours.")
-  }
+    e.preventDefault();
+    console.log("Inquiry Received:", formData);
+    alert("Inquiry Sent. Our project manager will reach out shortly.");
+  };
 
   const contactInfo = [
     {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-      title: 'Our Office',
-      details: ['645 Selland Ave ', 'California, 93722'],
+      icon: <MapPin size={20} className="text-brand-gold" strokeWidth={1.5} />,
+      title: "Our Atelier",
+      details: ["645 Selland Ave", "California, 93722"],
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-        </svg>
-      ),
-      title: 'Phone',
-      details: ['Main: : (213) 331 5414', 'Other: (480) 803 9359'], 
+      icon: <Phone size={20} className="text-brand-gold" strokeWidth={1.5} />,
+      title: "Direct Line",
+      details: ["(650) 203-4820"],
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-        </svg>
-      ),
-      title: 'Email',
-      details: ['info@nhconstructions.org', 'quotes@nhconstructions.org'],
+      icon: <Mail size={20} className="text-brand-gold" strokeWidth={1.5} />,
+      title: "Correspondence",
+      details: ["info@urbanedgebuilders.org", "quotes@urbanedgebuilders.org"],
     },
     {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-      title: 'Business Hours',
-      details: [
-        'Mon-Fri: 7:00 AM - 6:00 PM',
-        'Sat: 8:00 AM - 4:00 PM',
-        'Sun: Closed',
-      ],
+      icon: <Clock size={20} className="text-brand-gold" strokeWidth={1.5} />,
+      title: "Studio Hours",
+      details: ["Mon-Fri: 7:00 AM - 6:00 PM", "Sat: 8:00 AM - 4:00 PM"],
     },
-  ]
+  ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#1E40AF] to-[#3B82F6] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact NH Constructions</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            Ready to start your construction project? Get in touch with our expert team for a free consultation
-          </p>
+    <div className="bg-white">
+      {/* Sophisticated Hero */}
+      <section className="relative pt-40 pb-24 bg-brand-dark overflow-hidden">
+        <div className="absolute inset-0 opacity-10 grayscale">
+          <img
+            src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            className="w-full h-full object-cover"
+            alt=""
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-8">
+          <span className="text-brand-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
+            Inquiry
+          </span>
+          <h1 className="text-5xl md:text-7xl font-serif text-white leading-tight">
+            Begin Your{" "}
+            <span className="italic font-light opacity-70">Legacy.</span>
+          </h1>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Form */}
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F97316] focus:border-transparent"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F97316] focus:border-transparent"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F97316] focus:border-transparent"
-                    placeholder="(555) 123-4567"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Type
-                  </label>
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F97316] focus:border-transparent"
-                  >
-                    <option value="">Select a project type</option>
-                    <option value="residential">Residential Construction</option>
-                    <option value="commercial">Commercial Construction</option>
-                    <option value="renovation">Renovation & Remodeling</option>
-                    <option value="concrete">Concrete & Foundation</option>
-                    <option value="roofing">Roofing Services</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Details *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F97316] focus:border-transparent resize-vertical"
-                    placeholder="Please describe your project..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[#F97316] hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-8">
+      {/* Main Contact Section */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
+            {/* Contact Info (Left) */}
+            <div className="lg:col-span-4 space-y-12">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-                <p className="text-gray-600 mb-8">
-                  We're here to help with your construction needs. Contact us today for a free consultation and quote.
+                <h2 className="text-3xl font-serif text-brand-dark mb-6">
+                  Contact Details
+                </h2>
+                <p className="text-brand-muted font-light leading-relaxed mb-12">
+                  Our team of architects and project managers are ready to
+                  discuss the specific requirements of your next landmark
+                  project.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-10">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <div className="w-10 h-10 bg-[#F97316] text-white rounded-lg flex items-center justify-center">
-                        {info.icon}
-                      </div>
-                      <h3 className="font-semibold text-gray-900">{info.title}</h3>
+                  <div key={index} className="flex gap-6 group">
+                    <div className="w-12 h-12 bg-brand-light flex items-center justify-center shrink-0 border border-brand-dark/5 group-hover:border-brand-gold transition-colors duration-500">
+                      {info.icon}
                     </div>
-                    <div className="space-y-1">
+                    <div>
+                      <h3 className="font-serif text-lg text-brand-dark mb-2">
+                        {info.title}
+                      </h3>
                       {info.details.map((detail, i) => (
-                        <p key={i} className="text-gray-600 text-sm">{detail}</p>
+                        <p
+                          key={i}
+                          className="text-brand-muted text-sm font-light leading-relaxed"
+                        >
+                          {detail}
+                        </p>
                       ))}
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
 
-              {/* Map */}
-              <div className="bg-gray-200 rounded-lg p-8 text-center">
-                <div className="w-16 h-16 bg-[#F97316] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fillRule="evenodd"
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clipRule="evenodd"
+            {/* Form (Right) */}
+            <div className="lg:col-span-8 bg-brand-light p-12 lg:p-16 border border-brand-dark/5 shadow-2xl shadow-brand-dark/5">
+              <h2 className="text-3xl font-serif text-brand-dark mb-10">
+                Project Brief
+              </h2>
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] uppercase tracking-widest font-bold text-brand-dark/40">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-brand-dark/10 py-3 focus:outline-none focus:border-brand-gold transition-colors font-light"
+                      placeholder="Jane Doe"
                     />
-                  </svg>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] uppercase tracking-widest font-bold text-brand-dark/40">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-brand-dark/10 py-3 focus:outline-none focus:border-brand-gold transition-colors font-light"
+                      placeholder="jane@example.com"
+                    />
+                  </div>
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Visit Our Office</h3>
-                <p className="text-gray-600 text-sm">Stop by our office to discuss your project in person.</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] uppercase tracking-widest font-bold text-brand-dark/40">
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-brand-dark/10 py-3 focus:outline-none focus:border-brand-gold transition-colors font-light"
+                      placeholder="(213) 000-0000"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] uppercase tracking-widest font-bold text-brand-dark/40">
+                      Project Type
+                    </label>
+                    <select
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      className="w-full bg-transparent border-b border-brand-dark/10 py-3 focus:outline-none focus:border-brand-gold transition-colors font-light"
+                    >
+                      <option value="">Select Category</option>
+                      <option value="residential">
+                        Residential Masterpiece
+                      </option>
+                      <option value="commercial">Commercial Landmark</option>
+                      <option value="renovation">Structural Restoration</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-brand-dark/40">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b border-brand-dark/10 py-3 focus:outline-none focus:border-brand-gold transition-colors font-light resize-none"
+                    placeholder="Tell us about your vision..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="group flex items-center justify-center gap-4 w-full md:w-auto px-16 py-5 bg-brand-dark text-white font-bold uppercase tracking-widest hover:bg-brand-gold transition-all duration-500"
+                >
+                  Submit Inquiry{" "}
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-2 transition-transform"
+                  />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Simplified Modern FAQ */}
+      <section className="py-32 bg-brand-light">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-4xl font-serif text-brand-dark mb-16 text-center">
+            Inquiry FAQ
+          </h2>
+          <div className="divide-y divide-brand-dark/10">
+            {[
+              {
+                q: "What is your typical project timeline?",
+                a: "Residential masterpieces typically range from 12–24 months depending on architectural complexity.",
+              },
+              {
+                q: "Do you offer architectural design services?",
+                a: "Yes, we provide full end-to-end services from initial conceptualization to final structural execution.",
+              },
+              {
+                q: "Where do you operate?",
+                a: "We primarily serve the California region, with a focus on high-end residential and commercial developments.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="py-10">
+                <h3 className="text-xl font-serif text-brand-dark mb-4">
+                  {item.q}
+                </h3>
+                <p className="text-brand-muted font-light leading-relaxed">
+                  {item.a}
+                </p>
               </div>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600">Common questions about our construction services and process</p>
-          </div>
-          <div className="space-y-6">
-            <div className="bg-white rounded-lg p-6 shadow-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">How long does a typical project take?</h3>
-              <p className="text-gray-600">Project timelines vary depending on scope and complexity...</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">Do you provide free estimates?</h3>
-              <p className="text-gray-600">Yes! We provide free, detailed estimates for all projects...</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">Are you licensed and insured?</h3>
-              <p className="text-gray-600">Absolutely. NH Constructions is fully licensed, bonded, and insured...</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">What areas do you serve?</h3>
-              <p className="text-gray-600">We serve the greater metropolitan area and surrounding counties...</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-[#F97316] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Don't wait - your dream project is just one call away. Contact us today!
-          </p>
-          <a
-            href="tel:555-123-4567"
-            className="bg-white text-[#F97316] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition inline-block"
-          >
-            Call Now: +1 (480) 803 9359
-          </a>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

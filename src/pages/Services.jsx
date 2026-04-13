@@ -1,106 +1,157 @@
-import React from 'react'
+import React from "react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
     {
-      title: 'Residential Construction',
-      description: 'Custom homes, additions, and residential developments built to the highest standards.',
-      features: ['Custom Home Design', 'Room Additions', 'Kitchen & Bath Remodeling', 'Basement Finishing'],
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800'
+      title: "Residential Masterpieces",
+      subtitle: "Private Estates",
+      description:
+        "Bespoke architectural homes designed for refined living and generational legacy.",
+      features: [
+        "Architectural Design",
+        "Estate Development",
+        "Smart Home Integration",
+      ],
+      image:
+        "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
-      title: 'Commercial Construction',
-      description: 'Office buildings, retail spaces, and commercial developments for businesses.',
-      features: ['Office Buildings', 'Retail Spaces', 'Warehouses', 'Restaurant Build-outs'],
-      image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800'
+      title: "Commercial Landmarks",
+      subtitle: "Corporate Excellence",
+      description:
+        "High-performance retail and office environments that define city skylines.",
+      features: [
+        "Structural Engineering",
+        "Retail Build-outs",
+        "Adaptive Reuse",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1627670380526-82405ef9d509?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      title: 'Renovation & Remodeling',
-      description: 'Transform your existing space with our expert renovation and remodeling services.',
-      features: ['Whole Home Renovations', 'Kitchen Remodeling', 'Bathroom Upgrades', 'Exterior Improvements'],
-      image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800'
+      title: "Structural Restorations",
+      subtitle: "Modernizing Heritage",
+      description:
+        "Preserving the soul of historic structures while infusing modern luxury and safety.",
+      features: [
+        "Historic Preservation",
+        "Facade Renewal",
+        "Structural Reinforcement",
+      ],
+      image:
+        "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1200",
     },
     {
-      title: 'Concrete & Foundation',
-      description: 'Solid foundations and concrete work that stands the test of time.',
-      features: ['Foundation Pouring', 'Concrete Driveways', 'Sidewalks & Patios', 'Structural Concrete'],
-      image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800'
+      title: "Interior Architecture",
+      subtitle: "The Art of Space",
+      description:
+        "Precision-crafted interiors using rare materials and artisanal finishes.",
+      features: [
+        "Custom Millwork",
+        "Material Sourcing",
+        "Ambient Lighting Design",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
-    {
-      title: 'Roofing Services',
-      description: 'Professional roofing installation, repair, and maintenance services.',
-      features: ['New Roof Installation', 'Roof Repairs', 'Gutter Installation', 'Roof Inspections'],
-      image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      title: 'Electrical & Plumbing',
-      description: 'Complete electrical and plumbing services for all construction projects.',
-      features: ['Electrical Installation', 'Plumbing Systems', 'HVAC Installation', 'System Maintenance'],
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-  ]
+  ];
 
-  const process = [
+  const steps = [
     {
-      step: '01',
-      title: 'Consultation',
-      description: 'We meet with you to understand your vision, requirements, and budget.'
+      id: "01",
+      title: "Conceptualization",
+      desc: "Merging your vision with architectural feasibility.",
     },
     {
-      step: '02',
-      title: 'Design & Planning',
-      description: 'Our team creates detailed plans and designs for your project.'
+      id: "02",
+      title: "Technical Design",
+      desc: "Precision blueprints and material selection.",
     },
     {
-      step: '03',
-      title: 'Construction',
-      description: 'We begin construction with regular updates and quality checkpoints.'
+      id: "03",
+      title: "The Build",
+      desc: "Mastercraft execution with rigorous oversight.",
     },
     {
-      step: '04',
-      title: 'Completion',
-      description: 'Final walkthrough and handover of your completed project.'
+      id: "04",
+      title: "Handover",
+      desc: "A seamless transition to your new masterpiece.",
     },
-  ]
+  ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-500 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Construction Services</h1>
-          <p className="text-xl max-w-2xl mx-auto">
-            Comprehensive construction solutions tailored to meet your specific needs and exceed your expectations
-          </p>
+    <div className="bg-white">
+      {/* Refined Hero */}
+      <section className="relative pt-40 pb-24 bg-brand-dark overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            className="w-full h-full object-cover"
+            alt=""
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-8">
+          <span className="text-brand-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
+            Capabilities
+          </span>
+          <h1 className="text-5xl md:text-7xl font-serif text-white leading-tight max-w-3xl">
+            Precision{" "}
+            <span className="italic font-light opacity-70">Solutions</span>{" "}
+            <br />
+            for Bold Visions.
+          </h1>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {/* Services Section - Alternating Layout */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="space-y-40">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
-                        <div className="w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
-                          <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        </div>
-                        <span className="text-gray-700">{feature}</span>
+              <div
+                key={index}
+                className={`flex flex-col lg:flex-row items-center gap-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
+              >
+                <div className="w-full lg:w-1/2 overflow-hidden group">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-[500px] object-cover   hover: -0 transition-all duration-1000 scale-105 hover:scale-100"
+                  />
+                </div>
+                <div className="w-full lg:w-1/2">
+                  <span className="text-brand-gold uppercase tracking-widest text-xs font-bold mb-4 block">
+                    {service.subtitle}
+                  </span>
+                  <h2 className="text-4xl font-serif text-brand-dark mb-6">
+                    {service.title}
+                  </h2>
+                  <p className="text-brand-muted text-lg mb-8 leading-relaxed font-light">
+                    {service.description}
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    {service.features.map((f, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-sm text-brand-dark tracking-wide uppercase font-medium"
+                      >
+                        <div className="w-1.5 h-1.5 bg-brand-gold rotate-45" />{" "}
+                        {f}
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    to="/contact"
+                    className="group flex items-center gap-4 text-xs font-bold uppercase tracking-superwide text-brand-dark border-b border-brand-dark/20 pb-2 hover:border-brand-gold transition-all"
+                  >
+                    Request Dossier{" "}
+                    <ArrowRight
+                      size={14}
+                      className="group-hover:translate-x-2 transition-transform"
+                    />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -108,48 +159,62 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Construction Process</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A streamlined approach that ensures quality results and client satisfaction
+      {/* The Process - Minimal Timeline */}
+      <section className="py-32 bg-brand-light">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div>
+              <span className="text-brand-gold uppercase tracking-widest text-xs font-bold mb-4 block">
+                Methodology
+              </span>
+              <h2 className="text-4xl font-serif text-brand-dark">
+                How We Build Excellence
+              </h2>
+            </div>
+            <p className="text-brand-muted max-w-md font-light">
+              From initial sketch to final inspection, our process is built on
+              transparency and uncompromising standards.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((item, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-1">
+            {steps.map((step) => (
+              <div
+                key={step.id}
+                className="bg-white p-12 border border-brand-dark/5 hover:border-brand-gold transition-colors duration-500"
+              >
+                <span className="text-5xl font-serif text-brand-gold/20 mb-8 block italic">
+                  {step.id}
+                </span>
+                <h3 className="text-xl font-serif text-brand-dark mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-brand-muted text-sm leading-relaxed font-light">
+                  {step.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-orange-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Need a Custom Solution?
+      {/* Modern CTA */}
+      <section className="py-24 bg-brand-dark text-center">
+        <div className="max-w-3xl mx-auto px-8">
+          <h2 className="text-4xl font-serif text-white mb-8">
+            Discuss your{" "}
+            <span className="italic text-brand-gold">next landmark.</span>
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Every project is unique. Contact us to discuss your specific requirements and get a personalized quote.
-          </p>
-          <a 
-            href="/contact" 
-            className="bg-white text-orange-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
+          <a
+            href="/contact"
+            className="inline-block px-12 py-5 bg-brand-gold text-brand-dark font-bold uppercase tracking-widest hover:bg-white transition-all"
           >
-            Get Free Consultation
+            Schedule a Consultation
           </a>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

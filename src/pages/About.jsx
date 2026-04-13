@@ -1,140 +1,112 @@
 import React from "react";
-import one from "../assets/one.jpg"
+import { ShieldCheck, Target, Award, Zap } from "lucide-react";
+import one from "../assets/main.jpeg";
 
 const About = () => {
   const team = [
     {
       name: "Nolan Hudson",
-      role: "CEO & Founder",
-      experience: "25+ years",
-      image:one,
+      role: "CEO & Principal Architect",
+      experience: "25+ Years of Mastery",
+      image: one,
       description:
-        "Licensed contractor with extensive experience in residential and commercial construction.",
+        "A visionary leader in the  construction landscape, Nolan has spent over two decades bridging the gap between bold architectural concepts and structural reality.",
     },
   ];
 
   const values = [
     {
-      title: "Quality First",
+      title: "Unyielding Quality",
       description:
-        "We never compromise on quality and use only the finest materials and craftsmanship.",
-      icon: "⭐",
+        "We source only the finest materials, ensuring every joint and finish meets an archival standard.",
+      icon: <Award className="text-brand-gold" size={32} strokeWidth={1} />,
     },
     {
-      title: "Integrity",
+      title: "Radical Integrity",
       description:
-        "Honest communication, transparent pricing, and ethical business practices in everything we do.",
-      icon: "🤝",
+        "Transparent communication is our bedrock. We build trust before we ever break ground.",
+      icon: (
+        <ShieldCheck className="text-brand-gold" size={32} strokeWidth={1} />
+      ),
     },
     {
-      title: "Innovation",
+      title: "Technical Innovation",
       description:
-        "Embracing new technologies and methods to deliver better results for our clients.",
-      icon: "💡",
+        "Utilizing 3D modeling and sustainable tech to push the boundaries of modern engineering.",
+      icon: <Zap className="text-brand-gold" size={32} strokeWidth={1} />,
     },
     {
-      title: "Safety",
+      title: "Precision Safety",
       description:
-        "Maintaining the highest safety standards to protect our workers and your property.",
-      icon: "🛡️",
+        "Our sites are benchmarks for safety, protecting our craftsmen and your investment with rigor.",
+      icon: <Target className="text-brand-gold" size={32} strokeWidth={1} />,
     },
   ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section
-        style={{
-          background: "linear-gradient(to right, #1E40AF, #3B82F6)",
-          color: "white",
-          paddingTop: "5rem",
-          paddingBottom: "5rem",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "0 1.5rem" }}>
-          <h1 style={{ fontSize: "3rem", fontWeight: "bold", marginBottom: "1.5rem" }}>
-            About NH Constructions
+    <div className="bg-white">
+      {/* Editorial Hero */}
+      <section className="relative pt-40 pb-24 bg-brand-dark">
+        <div className="max-w-7xl mx-auto px-8">
+          <span className="text-brand-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
+            Our Legacy
+          </span>
+          <h1 className="text-5xl md:text-8xl font-serif text-white leading-none mb-8">
+            Established in{" "}
+            <span className="italic font-light opacity-60">2003.</span>
           </h1>
-          <p style={{ fontSize: "1.25rem", maxWidth: "42rem", margin: "0 auto" }}>
-            Building communities and creating lasting relationships through exceptional
-            construction services since 2003
+          <p className="text-brand-muted text-xl max-w-2xl font-light leading-relaxed">
+            Defining the California skyline through a relentless pursuit of
+            architectural perfection and structural integrity.
           </p>
         </div>
       </section>
 
-      {/* Company Story */}
-      <section style={{ padding: "4rem 0" }}>
-        <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "0 1.5rem" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr",
-              gap: "3rem",
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <h2 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "1.5rem", color: "#111827" }}>
-                Our Story
+      {/* Narrative Section */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-7">
+              <h2 className="text-4xl font-serif text-brand-dark mb-10">
+                A journey from a family workshop <br />
+                to <span className="italic">industry icons.</span>
               </h2>
-              <div style={{ color: "#4B5563", lineHeight: "1.75" }}>
-                <p style={{ marginBottom: "1rem" }}>
-                  Founded in 2003 by Nolan Hudson, NH Constructions started as a small family business
-                  with a simple mission: to provide honest, quality construction services to our
-                  local community. What began as a two-person operation has grown into a team of
-                  over 50 skilled professionals.
-                </p>
-                <p style={{ marginBottom: "1rem" }}>
-                  Over the past two decades, we've completed more than 500 projects ranging from
-                  custom homes to large commercial developments. Our commitment to excellence has
-                  earned us numerous awards and, more importantly, the trust of our clients and
-                  community.
+              <div className="text-brand-muted space-y-6 text-lg font-light leading-relaxed">
+                <p>
+                  Founded by Nolan Hudson, Urban Edge Builders was born from a
+                  singular vision: that a building should be more than just a
+                  structure—it should be a legacy.
                 </p>
                 <p>
-                  Today, NH Constructions continues to uphold the values that made us who we are: quality
-                  craftsmanship, honest communication, and unwavering dedication to client
-                  satisfaction.
+                  What began as a specialized masonry crew has evolved into a
+                  multi-disciplinary powerhouse of over 50 artisans, engineers,
+                  and visionaries. We don't just build; we curate environments
+                  that inspire the people within them.
                 </p>
               </div>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <div className="lg:col-span-5 relative">
+              <div className="absolute -top-10 -right-10 w-40 h-40 border-t border-r border-brand-gold/30 hidden lg:block" />
               <img
-                src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Construction site"
-                style={{
-                  width: "100%",
-                  height: "16rem",
-                  objectFit: "cover",
-                  borderRadius: "0.5rem",
-                  boxShadow: "0 10px 15px rgba(0,0,0,0.1)",
-                }}
+                src="https://images.unsplash.com/photo-1574757987642-5755f0839101?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Architectural Planning"
+                className="w-full hover:grayscale-0 transition-all duration-1000 shadow-2xl"
               />
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-                <div
-                  style={{
-                    backgroundColor: "#F97316",
-                    color: "white",
-                    padding: "1rem",
-                    borderRadius: "0.5rem",
-                    textAlign: "center",
-                  }}
-                >
-                  <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>500+</div>
-                  <div style={{ fontSize: "0.875rem" }}>Projects Completed</div>
+              <div className="grid grid-cols-2 gap-px bg-brand-dark/10 mt-8">
+                <div className="bg-brand-light p-8 text-center">
+                  <div className="text-4xl font-serif text-brand-dark">
+                    500+
+                  </div>
+                  <div className="text-[10px] uppercase tracking-widest text-brand-gold font-bold mt-2">
+                    Masterpieces
+                  </div>
                 </div>
-                <div
-                  style={{
-                    backgroundColor: "#1E40AF",
-                    color: "white",
-                    padding: "1rem",
-                    borderRadius: "0.5rem",
-                    textAlign: "center",
-                  }}
-                >
-                  <div style={{ fontSize: "1.5rem", fontWeight: "bold" }}>20+</div>
-                  <div style={{ fontSize: "0.875rem" }}>Years Experience</div>
+                <div className="bg-brand-dark text-white p-8 text-center">
+                  <div className="text-4xl font-serif text-brand-gold">20+</div>
+                  <div className="text-[10px] uppercase tracking-widest opacity-60 font-bold mt-2">
+                    Years of Craft
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,86 +114,65 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section style={{ padding: "4rem 0", backgroundColor: "#F9FAFB" }}>
-        <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "0 1.5rem" }}>
-          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <h2 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "1rem", color: "#111827" }}>
-              Our Core Values
+      {/* Philosophy (Values) Section */}
+      <section className="py-32 bg-brand-light">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="mb-20">
+            <h2 className="text-4xl font-serif text-brand-dark mb-4 text-center">
+              Our Philosophy
             </h2>
-            <p style={{ fontSize: "1.25rem", color: "#4B5563", maxWidth: "42rem", margin: "0 auto" }}>
-              The principles that guide everything we do and every decision we make
-            </p>
+            <div className="w-20 h-px bg-brand-gold mx-auto" />
           </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr",
-              gap: "2rem",
-            }}
-          >
-            {values.map((value, index) => (
-              <div
-                key={index}
-                style={{
-                  backgroundColor: "white",
-                  padding: "1.5rem",
-                  borderRadius: "0.5rem",
-                  boxShadow: "0 10px 15px rgba(0,0,0,0.1)",
-                  textAlign: "center",
-                }}
-              >
-                <div style={{ fontSize: "2rem", marginBottom: "1rem" }}>{value.icon}</div>
-                <h3 style={{ fontSize: "1.25rem", fontWeight: "600", color: "#111827", marginBottom: "0.75rem" }}>
-                  {value.title}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {values.map((v, i) => (
+              <div key={i} className="group">
+                <div className="mb-6 transform group-hover:-translate-y-2 transition-transform duration-500">
+                  {v.icon}
+                </div>
+                <h3 className="text-xl font-serif text-brand-dark mb-4">
+                  {v.title}
                 </h3>
-                <p style={{ color: "#4B5563" }}>{value.description}</p>
+                <p className="text-brand-muted text-sm leading-relaxed font-light">
+                  {v.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section style={{ padding: "4rem 0" }}>
-        <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "0 1.5rem" }}>
-          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-            <h2 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "1rem", color: "#111827" }}>
-              Meet Our Leadership Team
-            </h2>
-            <p style={{ fontSize: "1.25rem", color: "#4B5563", maxWidth: "42rem", margin: "0 auto" }}>
-              Experienced professionals dedicated to delivering exceptional results
-            </p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2rem" }}>
-            {team.map((member, index) => (
+      {/* Leadership Section */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-8">
+          <h2 className="text-4xl font-serif text-brand-dark mb-20 text-center">
+            The Visionary
+          </h2>
+          <div className="flex justify-center">
+            {team.map((member, i) => (
               <div
-                key={index}
-                style={{
-                  backgroundColor: "white",
-                  borderRadius: "0.5rem",
-                  boxShadow: "0 10px 15px rgba(0,0,0,0.1)",
-                  overflow: "hidden",
-                }}
+                key={i}
+                className="max-w-4xl grid grid-cols-1 md:grid-cols-2 bg-white border border-brand-dark/5"
               >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  style={{
-                    width: "100%",
-                    height: "16rem",
-                    objectFit: "contain",
-                  }}
-                />
-                <div style={{ padding: "1.5rem" }}>
-                  <h3 style={{ fontSize: "1.25rem", fontWeight: "600", color: "#111827", marginBottom: "0.5rem" }}>
+                <div className="overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover  hover:grayscale-0 transition-all duration-1000"
+                  />
+                </div>
+                <div className="p-12 flex flex-col justify-center">
+                  <span className="text-brand-gold uppercase tracking-widest text-xs font-bold mb-2">
+                    {member.role}
+                  </span>
+                  <h3 className="text-3xl font-serif text-brand-dark mb-4">
                     {member.name}
                   </h3>
-                  <p style={{ color: "#F97316", fontWeight: "500", marginBottom: "0.5rem" }}>{member.role}</p>
-                  <p style={{ fontSize: "0.875rem", color: "#4B5563", marginBottom: "0.75rem" }}>
-                    {member.experience} experience
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-brand-muted mb-6">
+                    {member.experience}
                   </p>
-                  <p style={{ fontSize: "0.875rem", color: "#4B5563" }}>{member.description}</p>
+                  <p className="text-brand-muted leading-relaxed font-light italic">
+                    "{member.description}"
+                  </p>
                 </div>
               </div>
             ))}
@@ -229,86 +180,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section style={{ padding: "4rem 0", backgroundColor: "#1E40AF", color: "white" }}>
-        <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "0 1.5rem" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr",
-              gap: "3rem",
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <h2 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "1.5rem" }}>Our Mission</h2>
-              <p style={{ fontSize: "1.125rem", marginBottom: "1.5rem" }}>
-                To be the leading construction company in our region by consistently delivering
-                exceptional quality, innovative solutions, and unmatched customer service while
-                building lasting relationships with our clients and community.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ color: "#F97316" }}>✔</span>
-                  <span>Commitment to Excellence</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ color: "#F97316" }}>✔</span>
-                  <span>Customer-Focused Approach</span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                  <span style={{ color: "#F97316" }}>✔</span>
-                  <span>Community Partnership</span>
-                </div>
-              </div>
-            </div>
-            <div style={{ textAlign: "center" }}>
-              <div
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.1)",
-                  borderRadius: "0.5rem",
-                  padding: "2rem",
-                }}
-              >
-                <h3 style={{ fontSize: "1.5rem", fontWeight: "bold", marginBottom: "1rem" }}>
-                  Awards & Recognition
-                </h3>
-                <div style={{ lineHeight: "1.75" }}>
-                  <p>🏆 Builder of the Year Finalist 2016</p>
-                  <p>🏆 Excellence in Construction Award</p>
-                  <p>🏆 Community Builder Award</p>
-                  <p>🏆 Safety Excellence Recognition</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section style={{ padding: "4rem 0", backgroundColor: "#F97316", color: "white" }}>
-        <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "0 1.5rem", textAlign: "center" }}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "1rem" }}>
-            Ready to Work With Us?
+      {/* Modern CTA */}
+      <section className="py-32 bg-brand-dark text-center">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-4xl md:text-6xl font-serif text-white mb-10">
+            Let’s build something{" "}
+            <span className="italic text-brand-gold text-5xl md:text-7xl">
+              timeless.
+            </span>
           </h2>
-          <p style={{ fontSize: "1.25rem", marginBottom: "2rem", maxWidth: "42rem", marginLeft: "auto", marginRight: "auto" }}>
-            Join the hundreds of satisfied clients who have trusted NH Constructions with their
-            construction projects
-          </p>
           <a
             href="/contact"
-            style={{
-              backgroundColor: "white",
-              color: "#F97316",
-              padding: "1rem 2rem",
-              borderRadius: "0.5rem",
-              fontWeight: "600",
-              boxShadow: "0 10px 15px rgba(0,0,0,0.1)",
-              display: "inline-block",
-              textDecoration: "none",
-            }}
+            className="inline-block bg-brand-gold text-brand-dark px-16 py-5 font-bold uppercase tracking-widest hover:bg-white transition-all duration-500"
           >
-            Start Your Project Today
+            Start Your Legacy
           </a>
         </div>
       </section>
