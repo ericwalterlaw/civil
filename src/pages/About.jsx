@@ -5,12 +5,12 @@ import one from "../assets/main.jpeg";
 const About = () => {
   const team = [
     {
-      name: "Nolan Hudson",
+      name: "Tim Bernardin",
       role: "CEO & Principal Architect",
       experience: "25+ Years of Mastery",
       image: one,
       description:
-        "A visionary leader in the  construction landscape, Nolan has spent over two decades bridging the gap between bold architectural concepts and structural reality.",
+        "A visionary leader in the construction landscape, Tim has spent over two decades bridging the gap between bold architectural concepts and structural reality.",
     },
   ];
 
@@ -73,7 +73,7 @@ const About = () => {
               </h2>
               <div className="text-brand-muted space-y-6 text-lg font-light leading-relaxed">
                 <p>
-                  Founded by Nolan Hudson, Urban Edge Builders was born from a
+                  Founded by Tim Bernardin, Urban Edge Builders was born from a
                   singular vision: that a building should be more than just a
                   structure—it should be a legacy.
                 </p>
