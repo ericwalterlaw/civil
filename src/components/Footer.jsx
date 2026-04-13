@@ -109,7 +109,7 @@ const Footer = () => {
         {/* Legal & Copyright */}
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-brand-muted uppercase tracking-widest font-light">
-            &copy; {currentYear} Hudson Constructions. All rights reserved.
+            &copy; {currentYear} URBAN Edge Builders. All rights reserved.
           </p>
           <div className="flex gap-8">
             <a
