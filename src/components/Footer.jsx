@@ -53,7 +53,7 @@ const Footer = () => {
               Explore
             </h4>
             <ul className="space-y-4">
-              {["Home", "Services", "About Us", "Contact"].map((item) => (
+              {["Home", "Services", "About", "Contact"].map((item) => (
                 <li key={item}>
                   <a
                     href={`/${item.toLowerCase().replace(" ", "")}`}
