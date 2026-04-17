@@ -43,7 +43,7 @@ const Contact = () => {
         </svg>
       ),
       title: 'Phone',
-      details: ['Main: : (308) 206 7490', 'Other: (480) 803 9359'], 
+      details: ['Main: : (308) 206 7490', 'Other: +1 (480) 803 9359'], 
     },
     {
       icon: (
