@@ -272,7 +272,7 @@ const Contact = () => {
             href="tel:555-123-4567"
             className="bg-white text-[#F97316] hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition inline-block"
           >
-            Call Now: +1 (480) 803 9359
+            Call Now: +1 (308) 206 7490
           </a>
         </div>
       </section>
